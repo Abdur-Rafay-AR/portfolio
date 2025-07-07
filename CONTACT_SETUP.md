@@ -16,26 +16,21 @@ This portfolio includes a functional contact form that sends emails using EmailJ
 3. Get your Template ID
 4. Update the JavaScript file with your credentials
 
-### 3. Update script.js
-Replace the following placeholders in `script.js`:
+### 3. Create Email Configuration File
+1. Copy `email-config.template.js` to `email-config.js`
+2. Update the values in `email-config.js` with your actual EmailJS credentials:
 ```javascript
-emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+const EMAIL_CONFIG = {
+    publicKey: "YOUR_ACTUAL_PUBLIC_KEY",
+    serviceId: "YOUR_ACTUAL_SERVICE_ID", 
+    templateId: "YOUR_ACTUAL_TEMPLATE_ID",
+    recipientEmail: "your-email@example.com"
+};
 ```
 
-```javascript
-const response = await emailjs.send(
-    'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-    'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-    templateParams
-);
-```
+**Important**: Never commit `email-config.js` to version control as it contains your API keys!
 
-### 4. Update Email Address
-Replace `'abdurrafay@example.com'` with your actual email address in two places:
-- In the `templateParams` object
-- In the `sendEmailFallback` function
-
-### 5. EmailJS Template Variables
+### 4. EmailJS Template Variables
 Make sure your EmailJS template includes these variables:
 - `{{from_name}}` - Sender's name
 - `{{from_email}}` - Sender's email
@@ -69,9 +64,11 @@ This message was sent from your portfolio contact form.
 - Responsive design
 
 ## Security Notes
-- EmailJS public key is safe to expose in client-side code
+- The `email-config.js` file is excluded from version control via `.gitignore`
+- EmailJS public key is safe to expose in client-side code, but keeping it in a separate config file is a good practice
 - Template ID and Service ID are also safe to expose
 - Your email address will be visible in the source code
+- Always use the template file (`email-config.template.js`) when sharing your project
 
 ## Testing
 1. Fill out the contact form

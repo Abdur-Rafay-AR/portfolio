@@ -3,7 +3,7 @@
 const EMAIL_CONFIG = {
     publicKey: "9B72VSJFWvC7cLPzl", // Replace with your EmailJS public key
     serviceId: "service_r2hapti", // Replace with your EmailJS service ID
-    templateId: "Gmail", // Replace with your EmailJS template ID
+    templateId: "template_wlb6ia9", // Replace with your EmailJS template ID
     recipientEmail: "abdurrafay432007@gmail.com" // Replace with your email address
 };
 

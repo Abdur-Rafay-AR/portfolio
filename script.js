@@ -292,13 +292,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Prepare email parameters
             const templateParams = {
-                from_name: formData.get('name').trim(),
-                from_email: formData.get('email').trim(),
+                name: formData.get('name').trim(),
+                email: formData.get('email').trim(),
                 subject: formData.get('subject').trim(),
-                message: formData.get('message').trim(),
-                to_email: EMAIL_CONFIG.recipientEmail,
-                reply_to: formData.get('email').trim()
+                message: formData.get('message').trim()
             };
+
             
             try {
                 // Send email using EmailJS
