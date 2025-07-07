@@ -558,7 +558,7 @@ body {
 
 /* Header */
 header {
-    background: rgba(0, 0, 0, 0.8);
+    background: #021611;
     backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;

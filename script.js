@@ -170,12 +170,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentScrollY > 50) {
             header.style.background = isLight 
                 ? 'rgba(248, 250, 252, 0.95)' 
-                : 'rgba(15, 23, 42, 0.95)';
+                : 'rgba(2, 22, 17, 0.85)';
             header.style.backdropFilter = 'blur(20px) saturate(180%)';
         } else {
             header.style.background = isLight 
                 ? 'rgba(248, 250, 252, 0.8)' 
-                : 'rgba(15, 23, 42, 0.8)';
+                : 'rgba(2, 22, 17, 0.9)';
             header.style.backdropFilter = 'blur(20px)';
         }
     }
