@@ -1594,10 +1594,10 @@ section.visible {
 
 /* Contact Section */
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-3xl);
-    align-items: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
 }
 
 .contact-info {
@@ -1605,6 +1605,9 @@ section.visible {
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
     border: 1px solid var(--border-color);
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .contact-info h3 {
@@ -2074,7 +2077,11 @@ footer {
     }
     
     .contact-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 50vh;
+        padding: 0 var(--spacing-md);
     }
     
     .timeline::before {
