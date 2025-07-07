@@ -665,7 +665,7 @@ section.visible {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: var(--spacing-3xl);
-    align-items: center;
+    align-items: start;
 }
 
 .about-image {
@@ -680,52 +680,14 @@ section.visible {
     border-radius: var(--radius-xl);
     object-fit: cover;
     transition: transform var(--transition-slow);
-    box-shadow: var(--shadow-xl);
-    border: 3px solid var(--border-color);
+    box-shadow: var(--shadow-xl), 0 0 20px rgba(16, 185, 129, 0.4);
+    border: 3px solid var(--primary-color);
+    object-position: center top;
 }
 
 .profile-pic:hover {
     transform: scale(1.05);
-}
-
-.about-decoration {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
-.decoration-circle {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 100px;
-    height: 100px;
-    border: 3px solid var(--primary-color);
-    border-radius: 50%;
-    opacity: 0.3;
-    animation: pulse 2s infinite;
-}
-
-.decoration-dots {
-    position: absolute;
-    bottom: -20px;
-    left: -20px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-}
-
-.decoration-dots span {
-    width: 8px;
-    height: 8px;
-    background: var(--primary-color);
-    border-radius: 50%;
-    opacity: 0.5;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.6; }
+    box-shadow: var(--shadow-xl), 0 0 30px rgba(16, 185, 129, 0.6);
 }
 
 .about-text h3 {
