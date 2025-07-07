@@ -70,6 +70,43 @@ This message was sent from your portfolio contact form.
 - Your email address will be visible in the source code
 - Always use the template file (`email-config.template.js`) when sharing your project
 
+## Alternative Configuration Methods
+
+### Method 1: JavaScript Config File (Current)
+```javascript
+// Copy email-config.template.js to email-config.js
+const EMAIL_CONFIG = {
+    publicKey: "YOUR_ACTUAL_PUBLIC_KEY",
+    serviceId: "YOUR_ACTUAL_SERVICE_ID", 
+    templateId: "YOUR_ACTUAL_TEMPLATE_ID",
+    recipientEmail: "your-email@example.com"
+};
+```
+
+### Method 2: Environment Variables (Recommended for Production)
+```bash
+# Copy .env.template to .env
+EMAILJS_PUBLIC_KEY=YOUR_EMAILJS_PUBLIC_KEY
+EMAILJS_SERVICE_ID=YOUR_SERVICE_ID
+EMAILJS_TEMPLATE_ID=YOUR_TEMPLATE_ID
+RECIPIENT_EMAIL=your-email@example.com
+```
+
+### Method 3: JSON Configuration
+```json
+// Copy config.template.json to config.json
+{
+  "emailjs": {
+    "publicKey": "YOUR_EMAILJS_PUBLIC_KEY",
+    "serviceId": "YOUR_SERVICE_ID",
+    "templateId": "YOUR_TEMPLATE_ID",
+    "recipientEmail": "your-email@example.com"
+  }
+}
+```
+
+**Note**: All actual config files (email-config.js, .env, config.json) are excluded from version control via .gitignore
+
 ## Testing
 1. Fill out the contact form
 2. Check for success/error notifications

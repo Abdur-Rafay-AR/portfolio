@@ -1,5 +1,6 @@
 # Email configuration (contains sensitive API keys)
 email-config.js
+config.json
 
 # Environment variables
 .env
