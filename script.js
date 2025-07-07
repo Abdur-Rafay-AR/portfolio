@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Add hover effects for interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, .project-card, .service-card, .skill-item, .cta-button, .btn-primary, .btn-secondary, .filter-btn, .hamburger, .logo, .theme-toggle');
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .service-card, .skill-item, .skill-category-header, .cta-button, .btn-primary, .btn-secondary, .filter-btn, .hamburger, .logo, .theme-toggle');
     
     interactiveElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
@@ -146,9 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
                 
-                // Animate skill bars when skills section becomes visible
+                // Initialize skill dropdowns when skills section becomes visible
                 if (entry.target.id === 'skills') {
-                    animateSkillBars();
+                    initializeSkillDropdowns();
                 }
             }
         });
@@ -193,21 +193,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Skill bars animation
-    function animateSkillBars() {
-        const skillBars = document.querySelectorAll('.skill-progress');
-        skillBars.forEach(bar => {
-            const progress = bar.getAttribute('data-progress');
-            if (progress) {
-                bar.style.setProperty('--progress-width', `${progress}%`);
-                bar.classList.add('animate');
+    // Skills dropdown functionality
+    function initializeSkillDropdowns() {
+        const skillHeaders = document.querySelectorAll('.skill-category-header');
+        
+        skillHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const category = header.parentElement;
+                const isActive = category.classList.contains('active');
                 
-                // Set width directly for browsers that don't support CSS custom properties in animations
-                setTimeout(() => {
-                    bar.style.width = `${progress}%`;
-                }, 100);
-            }
+                // Close all other dropdowns
+                document.querySelectorAll('.skill-category').forEach(cat => {
+                    if (cat !== category) {
+                        cat.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current dropdown
+                if (isActive) {
+                    category.classList.remove('active');
+                } else {
+                    category.classList.add('active');
+                }
+            });
         });
+        
+        // Open the first category by default
+        const firstCategory = document.querySelector('.skill-category');
+        if (firstCategory) {
+            firstCategory.classList.add('active');
+        }
     }
 
     // Project filtering
