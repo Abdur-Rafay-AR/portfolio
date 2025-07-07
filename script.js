@@ -154,8 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Filter projects
             projectCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (filter === 'all' || category === filter) {
+                const categories = card.getAttribute('data-category').split(' ');
+                const shouldShow = filter === 'all' || categories.includes(filter);
+                
+                if (shouldShow) {
                     card.style.display = 'flex';
                     card.style.animation = 'fadeInUp 0.5s ease-out';
                 } else {
