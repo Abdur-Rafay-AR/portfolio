@@ -1,4 +1,74 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Custom Cursor Implementation
+    const cursor = document.querySelector('.cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
+    const cursorTrail = document.querySelector('.cursor-trail');
+    
+    let mouseX = 0;
+    let mouseY = 0;
+    let trailDots = [];
+    
+    // Update cursor position
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Update cursor position
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+        
+        // Create trail dots
+        createTrailDot(mouseX, mouseY);
+    });
+    
+    // Create trail effect
+    function createTrailDot(x, y) {
+        const trailDot = document.createElement('div');
+        trailDot.className = 'trail-dot';
+        trailDot.style.left = x + 'px';
+        trailDot.style.top = y + 'px';
+        cursorTrail.appendChild(trailDot);
+        
+        // Remove trail dot after animation
+        setTimeout(() => {
+            if (trailDot.parentNode) {
+                trailDot.parentNode.removeChild(trailDot);
+            }
+        }, 800);
+    }
+    
+    // Add hover effects for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .project-card, .service-card, .skill-item, .cta-button, .btn-primary, .btn-secondary, .filter-btn, .hamburger, .logo, .theme-toggle');
+    
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+        
+        element.addEventListener('mousedown', () => {
+            cursor.classList.add('click');
+        });
+        
+        element.addEventListener('mouseup', () => {
+            cursor.classList.remove('click');
+        });
+    });
+    
+    // Hide cursor when mouse leaves window
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    });
+    
+    // Show cursor when mouse enters window
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+    });
+
     // Theme toggle functionality
     const themeToggle = document.createElement('button');
     themeToggle.className = 'theme-toggle';
@@ -200,24 +270,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Typing animation for hero section
+    // Hero section text display (no typewriter effect)
     const heroText = document.querySelector('.hero-content h1');
     if (heroText) {
-        const originalText = heroText.innerHTML;
-        let currentText = '';
-        let index = 0;
-        
-        function typeWriter() {
-            if (index < originalText.length) {
-                currentText += originalText.charAt(index);
-                heroText.innerHTML = currentText;
-                index++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        
-        // Start typing animation after page loads
-        setTimeout(typeWriter, 1000);
+        // Text is already displayed with highlights from HTML
+        // No additional JavaScript needed for text display
     }
 
     // Parallax effect for floating shapes
@@ -265,57 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     images.forEach(img => imageObserver.observe(img));
-
-    // Cursor effect (optional)
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor';
-    document.body.appendChild(cursor);
-
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-
-    // Add cursor styles
-    const cursorStyles = `
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary-color);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: all 0.1s ease;
-        }
-        
-        .cursor.hover {
-            transform: scale(1.5);
-            background: var(--primary-color);
-        }
-        
-        @media (max-width: 768px) {
-            .cursor {
-                display: none;
-            }
-        }
-    `;
-
-    const style = document.createElement('style');
-    style.textContent = cursorStyles;
-    document.head.appendChild(style);
-
-    // Cursor hover effects
-    const hoverElements = document.querySelectorAll('a, button, .project-card, .service-card');
-    hoverElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-        });
-        element.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
-        });
-    });
 
     // Performance optimization: Throttle scroll events
     let ticking = false;
