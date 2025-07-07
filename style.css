@@ -1469,8 +1469,8 @@ section.visible {
 }
 
 .btn-icon {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background: var(--primary-color);
     border-radius: 50%;
     display: flex;
@@ -1479,6 +1479,7 @@ section.visible {
     color: white;
     text-decoration: none;
     transition: all var(--transition-normal);
+    font-size: 1rem;
 }
 
 .btn-icon:hover {
