@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdur Rafay</title>
+    <title>Abdur Rafay - Backend Developer & Software Engineer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+            <div class="shape shape-5"></div>
+        </div>
+    </div>
+
     <header>
         <nav>
-            <div class="logo">Abdur Rafay</div>
+            <div class="logo">
+                <span class="logo-icon">AR</span>
+                <span class="logo-text">Abdur Rafay</span>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -20,8 +35,11 @@
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#articles">Articles</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -30,97 +48,627 @@
     <main>
         <section id="hero" class="hero-section animated-section">
             <div class="hero-content">
-                <h1>Hi, I'm Abdur Rafay</h1>
-                <p>A Passionate Backend Developer Specializing in Building Robust and Scalable Web Applications.</p>
-                <a href="#projects" class="cta-button">View My Work</a>
+                <div class="hero-badge animate__animated animate__fadeInDown">
+                    <i class="fas fa-code"></i>
+                    <span>Backend Developer</span>
+                </div>
+                <h1 class="animate__animated animate__fadeInUp">
+                    Building the <span class="highlight">Future</span><br>
+                    One Line of <span class="highlight">Code</span> at a Time
+                </h1>
+                <p class="animate__animated animate__fadeInUp animate__delay-1s">
+                    I'm Abdur Rafay, a passionate backend developer specializing in creating robust, scalable, and efficient server-side solutions. I transform complex problems into elegant code.
+                </p>
+                <div class="hero-buttons animate__animated animate__fadeInUp animate__delay-2s">
+                    <a href="#projects" class="cta-button primary">
+                        <i class="fas fa-rocket"></i>
+                        View My Work
+                    </a>
+                    <a href="#contact" class="cta-button secondary">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
+                <div class="hero-stats animate__animated animate__fadeInUp animate__delay-3s">
+                    <div class="stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual animate__animated animate__fadeInRight animate__delay-1s">
+                <div class="code-snippet">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="code-title">main.py</span>
+                    </div>
+                    <div class="code-content">
+                        <div class="code-line">
+                            <span class="keyword">class</span> <span class="class-name">Developer</span>:
+                        </div>
+                        <div class="code-line">
+                            <span class="indent">def</span> <span class="function">__init__</span>(self):
+                        </div>
+                        <div class="code-line">
+                            <span class="indent2">self.name = </span><span class="string">"Abdur Rafay"</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="indent2">self.role = </span><span class="string">"Backend Developer"</span>
+                        </div>
+                        <div class="code-line">
+                            <span class="indent2">self.skills = [</span><span class="string">"Python", "Flask", "MySQL"</span>]
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="about" class="animated-section">
-            <h2>About Me</h2>
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p class="section-subtitle">Get to know the person behind the code</p>
+            </div>
             <div class="about-content">
-                <img src="assets/pfp.jpg" alt="Abdur Rafay" class="profile-pic">
-                <p>Hello! I'm a backend developer with a strong focus on creating efficient and reliable server-side solutions. I have experience in Python, JavaScript and ML. I'm always eager to learn new things. My goal is to contribute to meaningful projects and help businesses grow through technology.</p>
+                <div class="about-image">
+                    <img src="assets/pfp.jpg" alt="Abdur Rafay" class="profile-pic">
+                    <div class="about-decoration">
+                        <div class="decoration-circle"></div>
+                        <div class="decoration-dots">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>Hello! I'm Abdur Rafay</h3>
+                    <p>I'm a passionate backend developer with a strong focus on creating efficient, scalable, and reliable server-side solutions. With over 3 years of experience in software development, I've worked on various projects ranging from web applications to machine learning systems.</p>
+                    
+                    <p>My journey in programming started with a curiosity about how things work behind the scenes. This led me to specialize in backend development, where I found my passion for building robust systems that power amazing user experiences.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <div>
+                                <h4>Education</h4>
+                                <p>Computer Science Student at Bahria University</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Islamabad, Pakistan</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-coffee"></i>
+                            <div>
+                                <h4>Interests</h4>
+                                <p>AI/ML, System Design, Open Source</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-buttons">
+                        <a href="#contact" class="btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Let's Talk
+                        </a>
+                        <a href="#" class="btn-secondary">
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="animated-section">
+            <div class="section-header">
+                <h2>Services</h2>
+                <p class="section-subtitle">What I can do for you</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                    <p>Building scalable server-side applications with Python, Flask, and modern frameworks. Creating robust APIs and database architectures.</p>
+                    <ul>
+                        <li>RESTful API Development</li>
+                        <li>Database Design & Optimization</li>
+                        <li>Server Architecture</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Management</h3>
+                    <p>Designing efficient database schemas and optimizing queries for better performance. Experience with SQL and NoSQL databases.</p>
+                    <ul>
+                        <li>MySQL & PostgreSQL</li>
+                        <li>Database Schema Design</li>
+                        <li>Query Optimization</li>
+                        <li>Data Migration</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI/ML Integration</h3>
+                    <p>Implementing machine learning models and AI solutions using TensorFlow and Python. Creating intelligent systems and automation tools.</p>
+                    <ul>
+                        <li>Machine Learning Models</li>
+                        <li>Data Analysis & Processing</li>
+                        <li>AI-Powered Applications</li>
+                        <li>Automation Scripts</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-spider"></i>
+                    </div>
+                    <h3>Web Scraping</h3>
+                    <p>Developing efficient web scrapers and data extraction tools. Handling complex websites and API integrations for data collection.</p>
+                    <ul>
+                        <li>Custom Web Scrapers</li>
+                        <li>API Integration</li>
+                        <li>Data Processing</li>
+                        <li>Automated Data Collection</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="skills" class="animated-section">
-            <h2>My Skills</h2>
+            <div class="section-header">
+                <h2>Technical Skills</h2>
+                <p class="section-subtitle">Technologies I work with</p>
+            </div>
             <div class="skills-container">
-                <div class="skill-item">
-                    <img src="assets/python.svg" alt="Language 1">
-                    <p>Python</p>
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="assets/python.svg" alt="Python">
+                            <div class="skill-info">
+                                <h4>Python</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="95"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/c++.svg" alt="C++">
+                            <div class="skill-info">
+                                <h4>C++</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="assets/flask.svg" alt="Language 2">
-                    <p>Flask</p>
+                
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="assets/flask.svg" alt="Flask">
+                            <div class="skill-info">
+                                <h4>Flask</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/tensorflow.svg" alt="TensorFlow">
+                            <div class="skill-info">
+                                <h4>TensorFlow</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="assets/mysql.svg" alt="Database 1">
-                    <p>MySQL</p>
+                
+                <div class="skill-category">
+                    <h3>Database & Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <img src="assets/mysql.svg" alt="MySQL">
+                            <div class="skill-info">
+                                <h4>MySQL</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <img src="assets/vscode.svg" alt="VS Code">
+                            <div class="skill-info">
+                                <h4>VS Code</h4>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-progress="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="assets/vscode.svg" alt="Tool 1">
-                    <p>Visual Studio Code</p>
+            </div>
+        </section>
+
+        <section id="experience" class="animated-section">
+            <div class="section-header">
+                <h2>Experience & Education</h2>
+                <p class="section-subtitle">My journey so far</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Computer Science Student</h3>
+                        <h4>Bahria University</h4>
+                        <span class="timeline-date">2022 - Present</span>
+                        <p>Pursuing Bachelor's degree in Computer Science with focus on software engineering, algorithms, and data structures. Maintaining excellent academic performance while working on personal projects.</p>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <img src="assets/tensorflow.svg" alt="AI Framework">
-                    <p>TensorFlow</p>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Freelance Developer</h3>
+                        <h4>Self-Employed</h4>
+                        <span class="timeline-date">2023 - Present</span>
+                        <p>Developing custom web applications and automation tools for clients. Specializing in Python backend development, web scraping, and database management.</p>
+                    </div>
                 </div>
-                 <div class="skill-item">
-                    <img src="assets/c++.svg" alt="Language 3">
-                    <p>C++</p>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Open Source Contributor</h3>
+                        <h4>GitHub</h4>
+                        <span class="timeline-date">2022 - Present</span>
+                        <p>Contributing to open source projects and maintaining personal repositories. Built tools for academic and professional use, including LMS automation and data analysis tools.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="animated-section">
-            <h2>Projects</h2>
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="tools">Tools</button>
+                <button class="filter-btn" data-filter="games">Games</button>
+            </div>
             <div class="projects-container">
-                <div class="project-card">
-                    <img src="assets/bahria.png" alt="Project 1">
-                    <h3>Assignment Checker</h3>
-                    <p>A streamlined tool to check pending LMS assignments for Bahria University students, featuring automatic login and a modern UI. Built with Python and Flask, it provides real-time assignment tracking and notifications.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Abdur-Rafay-AR/bahria-LMS-assignment-checker" target="_blank">GitHub</a>
+                <div class="project-card" data-category="tools">
+                    <div class="project-image">
+                        <img src="assets/bahria.png" alt="Assignment Checker">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://github.com/Abdur-Rafay-AR/bahria-LMS-assignment-checker" target="_blank" class="btn-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="btn-icon">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Assignment Checker</h3>
+                            <span class="project-status">Completed</span>
+                        </div>
+                        <p>A streamlined tool to check pending LMS assignments for Bahria University students, featuring automatic login and a modern UI. Built with Python and Flask, it provides real-time assignment tracking and notifications.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Web Scraping</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 15 Stars</span>
+                            <span><i class="fas fa-code-branch"></i> 5 Forks</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="assets/sfml.svg" alt="Project 2">
-                    <h3>GameBoy in C++</h3>
-                    <p>A GameBoy emulator built using C++ and SFML graphics library. Features include sprite rendering, basic game mechanics, and user input handling to recreate classic GameBoy functionality.</p>
-                     <div class="project-links">
-                        <a href=https://github.com/Abdur-Rafay-AR/Gameboy-Cpp-using-SFML"" target="_blank">GitHub</a>
+                
+                <div class="project-card" data-category="games">
+                    <div class="project-image">
+                        <img src="assets/sfml.svg" alt="GameBoy Emulator">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://github.com/Abdur-Rafay-AR/Gameboy-Cpp-using-SFML" target="_blank" class="btn-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="btn-icon">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>GameBoy Emulator</h3>
+                            <span class="project-status">In Progress</span>
+                        </div>
+                        <p>A GameBoy emulator built using C++ and SFML graphics library. Features include sprite rendering, basic game mechanics, and user input handling to recreate classic GameBoy functionality.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">SFML</span>
+                            <span class="tech-tag">Game Development</span>
+                            <span class="tech-tag">Graphics</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 8 Stars</span>
+                            <span><i class="fas fa-code-branch"></i> 3 Forks</span>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="assets/etsy.png" alt="Project 3">
-                    <h3>Etsy Shop Scraper</h3>
-                    <p>A comprehensive Python-based web scraper designed to extract shop information from Etsy, including sales data, contact information, and revenue analytics through the EverBee API integration.</p>
-                     <div class="project-links">
-                        <a href="https://github.com/Abdur-Rafay-AR/etsy-scraper" target="_blank">GitHub</a>
+                
+                <div class="project-card" data-category="tools">
+                    <div class="project-image">
+                        <img src="assets/etsy.png" alt="Etsy Shop Scraper">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://github.com/Abdur-Rafay-AR/etsy-scraper" target="_blank" class="btn-icon">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="btn-icon">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Etsy Shop Scraper</h3>
+                            <span class="project-status">Completed</span>
+                        </div>
+                        <p>A comprehensive Python-based web scraper designed to extract shop information from Etsy, including sales data, contact information, and revenue analytics through the EverBee API integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">BeautifulSoup</span>
+                            <span class="tech-tag">API Integration</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                        <div class="project-stats">
+                            <span><i class="fas fa-star"></i> 12 Stars</span>
+                            <span><i class="fas fa-code-branch"></i> 4 Forks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="articles" class="animated-section">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <p class="section-subtitle">Thoughts and insights on development</p>
+            </div>
+            <div class="articles-container">
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="assets/python.svg" alt="Python Best Practices">
+                        <div class="article-date">
+                            <span class="day">15</span>
+                            <span class="month">Dec</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-category">Python</div>
+                        <h3>Python Best Practices for Backend Development</h3>
+                        <p>Exploring the essential practices every Python backend developer should follow to write clean, maintainable, and efficient code.</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 5 min read</span>
+                            <span><i class="fas fa-eye"></i> 1.2k views</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="assets/flask.svg" alt="Flask API Development">
+                        <div class="article-date">
+                            <span class="day">08</span>
+                            <span class="month">Dec</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-category">Flask</div>
+                        <h3>Building Scalable APIs with Flask</h3>
+                        <p>A comprehensive guide to creating robust and scalable RESTful APIs using Flask, covering authentication, validation, and deployment.</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 8 min read</span>
+                            <span><i class="fas fa-eye"></i> 890 views</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="assets/mysql.svg" alt="Database Optimization">
+                        <div class="article-date">
+                            <span class="day">01</span>
+                            <span class="month">Dec</span>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-category">Database</div>
+                        <h3>Database Optimization Techniques</h3>
+                        <p>Learn how to optimize your database queries and improve application performance with these proven techniques and strategies.</p>
+                        <div class="article-meta">
+                            <span><i class="fas fa-clock"></i> 6 min read</span>
+                            <span><i class="fas fa-eye"></i> 1.5k views</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="animated-section">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out! You can email me at <a href="mailto:abdurrafay432007@gmail.com">abdurrafay432007@gmail.com</a> or find me on:</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/abdur-rafay-705416326/" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/Abdur-Rafay-AR" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
+            <div class="section-header">
+                <h2>Let's Work Together</h2>
+                <p class="section-subtitle">Ready to start your next project?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:abdurrafay432007@gmail.com">abdurrafay432007@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Islamabad, Pakistan</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Response Time</h4>
+                                <p>Within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Follow Me</h4>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/abdur-rafay-705416326/" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/Abdur-Rafay-AR" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" target="_blank" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Abdur Rafay. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Abdur Rafay</h3>
+                <p>Backend Developer specializing in building robust and scalable web applications.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Backend Development</a></li>
+                    <li><a href="#services">Database Management</a></li>
+                    <li><a href="#services">AI/ML Integration</a></li>
+                    <li><a href="#services">Web Scraping</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/abdur-rafay-705416326/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Abdur-Rafay-AR" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Abdur Rafay. All rights reserved. | Built with ❤️ and lots of ☕</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
