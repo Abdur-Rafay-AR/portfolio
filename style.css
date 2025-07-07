@@ -856,7 +856,7 @@ section.visible {
     box-shadow: var(--shadow-2xl);
     border: 1px solid var(--border-color);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .code-header {
