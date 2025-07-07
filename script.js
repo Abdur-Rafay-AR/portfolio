@@ -217,12 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-        
-        // Open the first category by default
-        const firstCategory = document.querySelector('.skill-category');
-        if (firstCategory) {
-            firstCategory.classList.add('active');
-        }
     }
 
     // Project filtering
