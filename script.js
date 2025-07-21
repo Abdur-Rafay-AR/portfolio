@@ -81,11 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
-                // Initialize skill dropdowns when skills section becomes visible
-                if (entry.target.id === 'skills') {
-                    initializeSkillDropdowns();
-                }
             }
         });
     }, observerOptions);
@@ -93,6 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
+
+    // Initialize skill dropdowns immediately
+    initializeSkillDropdowns();
 
     // Enhanced header scroll effect with theme-aware background
     const header = document.querySelector('header');
@@ -133,10 +131,23 @@ document.addEventListener('DOMContentLoaded', () => {
     function initializeSkillDropdowns() {
         const skillHeaders = document.querySelectorAll('.skill-category-header');
         
-        skillHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const category = header.parentElement;
+        console.log('Initializing skill dropdowns, found headers:', skillHeaders.length);
+        
+        skillHeaders.forEach((header, index) => {
+            console.log(`Adding event listener to header ${index + 1}`);
+            
+            // Remove any existing event listeners by cloning the element
+            const newHeader = header.cloneNode(true);
+            header.parentNode.replaceChild(newHeader, header);
+            
+            newHeader.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Dropdown clicked');
+                
+                const category = newHeader.parentElement;
                 const isActive = category.classList.contains('active');
+                
+                console.log('Current active state:', isActive);
                 
                 // Close all other dropdowns
                 document.querySelectorAll('.skill-category').forEach(cat => {
@@ -148,8 +159,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Toggle current dropdown
                 if (isActive) {
                     category.classList.remove('active');
+                    console.log('Closing dropdown');
                 } else {
                     category.classList.add('active');
+                    console.log('Opening dropdown');
                 }
             });
         });
