@@ -1645,6 +1645,14 @@ section.visible {
     text-decoration: none;
 }
 
+.contact-text a {
+  word-break: break-all;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+
 .contact-text a:hover {
     color: var(--primary-color);
 }
@@ -2312,3 +2320,4 @@ html {
         break-inside: avoid;
     }
 }
+
