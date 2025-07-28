@@ -1332,8 +1332,9 @@ section.visible {
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: var(--spacing-xl);
+    align-items: start;
 }
 
 .project-card {
@@ -1353,41 +1354,30 @@ section.visible {
 }
 
 .project-image {
-    position: relative;
-    aspect-ratio: 16/9;
-    overflow: hidden;
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    display: none;
 }
 
 .project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-slow);
+    display: none;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05);
+    display: none;
 }
 
 .project-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity var(--transition-normal);
+    display: none;
 }
 
 .project-card:hover .project-overlay {
-    opacity: 1;
+    display: none;
 }
 
 .project-actions {
     display: flex;
     gap: var(--spacing-md);
+    margin-top: auto;
+    padding-top: var(--spacing-md);
 }
 
 .btn-icon {
@@ -1414,6 +1404,7 @@ section.visible {
     flex: 1;
     display: flex;
     flex-direction: column;
+    border-radius: var(--radius-xl);
 }
 
 .project-header {
@@ -2056,6 +2047,29 @@ footer {
 }
 
 /* Responsive Design */
+@media (min-width: 1200px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+    
+    .project-image {
+        aspect-ratio: 16/9;
+        min-height: 220px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .projects-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-lg);
+    }
+    
+    .project-image {
+        aspect-ratio: 16/9;
+        min-height: 180px;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero-section {
         grid-template-columns: 1fr;
@@ -2154,6 +2168,21 @@ footer {
     
     .projects-container {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .project-card {
+        max-width: 100%;
+    }
+    
+    .project-image {
+        aspect-ratio: 16/9;
+        min-height: 200px;
+    }
+    
+    .project-image img {
+        object-fit: cover;
+        object-position: center;
     }
     
     .articles-container {
