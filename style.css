@@ -1692,6 +1692,33 @@ section.visible {
     border-color: var(--primary-color);
 }
 
+/* Upwork icon theme switching */
+.upwork-icon {
+    width: 30px;
+    height: 30px;
+    transition: all var(--transition-normal);
+    border-radius: 3px;
+    object-fit: contain;
+}
+
+/* Default (dark mode) - show light icon */
+.upwork-icon.light {
+    display: block;
+}
+
+.upwork-icon.dark {
+    display: none;
+}
+
+/* Light theme - show dark icon */
+[data-theme="light"] .upwork-icon.light {
+    display: none;
+}
+
+[data-theme="light"] .upwork-icon.dark {
+    display: block;
+}
+
 /* Contact Form */
 .contact-form {
     background-color: var(--surface-color);
@@ -2043,6 +2070,13 @@ footer {
     transform: translateY(-2px);
     border-color: var(--primary-color);
     box-shadow: var(--shadow-lg);
+}
+
+/* Footer Upwork icon styling */
+.footer-social a .upwork-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
 }
 
 .footer-bottom {
