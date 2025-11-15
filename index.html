@@ -3,13 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdur Rafay - AI Student & Full-Stack Developer</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Abdur Rafay - AI Student & Full-Stack Developer | ML Engineer Portfolio</title>
+    <meta name="description" content="Abdur Rafay is an Artificial Intelligence student at Bahria University specializing in AI/ML, web development, automation, and data science. Explore my portfolio of intelligent systems and web applications.">
+    <meta name="keywords" content="Abdur Rafay, AI Developer, Machine Learning Engineer, Full-Stack Developer, Python Developer, Web Scraping, Automation, React Developer, Flask, Django, Portfolio">
+    <meta name="author" content="Abdur Rafay">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#10b981">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abdur-rafay-ar.github.io/portfolio/">
+    <meta property="og:title" content="Abdur Rafay - AI Student & Full-Stack Developer">
+    <meta property="og:description" content="Explore the portfolio of Abdur Rafay, an AI student specializing in machine learning, full-stack development, and intelligent automation solutions.">
+    <meta property="og:image" content="https://abdur-rafay-ar.github.io/portfolio/assets/pfp.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://abdur-rafay-ar.github.io/portfolio/">
+    <meta property="twitter:title" content="Abdur Rafay - AI Student & Full-Stack Developer">
+    <meta property="twitter:description" content="Explore the portfolio of Abdur Rafay, an AI student specializing in machine learning, full-stack development, and intelligent automation solutions.">
+    <meta property="twitter:image" content="https://abdur-rafay-ar.github.io/portfolio/assets/pfp.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abdur-rafay-ar.github.io/portfolio/">
+    
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdur Rafay",
+      "url": "https://abdur-rafay-ar.github.io/portfolio/",
+      "jobTitle": "AI Student & Full-Stack Developer",
+      "description": "Artificial Intelligence student specializing in AI/ML, web development, and automation",
+      "image": "https://abdur-rafay-ar.github.io/portfolio/assets/pfp.jpg",
+      "email": "abdurrafay432007@gmail.com",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Bahria University"
+      },
+      "knowsAbout": ["Artificial Intelligence", "Machine Learning", "Python", "Web Development", "React", "Flask", "Django", "Web Scraping", "Automation"],
+      "sameAs": [
+        "https://www.linkedin.com/in/abdur-rafay-705416326/",
+        "https://github.com/Abdur-Rafay-AR",
+        "https://www.upwork.com/freelancers/~01e0e53ea3fc415198"
+      ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-container">
+            <div class="spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-logo">
+                    <img src="assets/logo.jpg" alt="Abdur Rafay">
+                </div>
+            </div>
+            <div class="loading-text">
+                <h2>Loading Portfolio</h2>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Animated Background -->
@@ -53,6 +131,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -135,7 +214,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="assets/pfp.jpg" alt="Abdur Rafay" class="profile-pic">
+                    <img src="assets/pfp.jpg" alt="Abdur Rafay" class="profile-pic" loading="lazy">
                 </div>
                 <div class="about-text">
                     <h3>Hello! I'm Abdur Rafay</h3>
@@ -226,7 +305,7 @@
                         <li>Data Processing & Analysis</li>
                     </ul>
                 </div>
-                <div class="service-card">
+                <!-- <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-database"></i>
                     </div>
@@ -238,7 +317,7 @@
                         <li>Backend Architecture</li>
                         <li>API Integration</li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </section>
 
@@ -255,35 +334,35 @@
                     </div>
                     <div class="skill-items" id="programming-skills">
                         <div class="skill-item">
-                            <img src="assets/python.svg" alt="Python">
+                            <img src="assets/python.svg" alt="Python" loading="lazy">
                             <div class="skill-info">
                                 <h4>Python</h4>
                                 <p>Advanced proficiency in Python for AI/ML, web development, and automation</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/sql-database.svg" alt="SQL">
+                            <img src="assets/sql-database.svg" alt="SQL" loading="lazy">
                             <div class="skill-info">
                                 <h4>SQL</h4>
                                 <p>Database design, queries, and optimization for data management</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/javascript.svg" alt="JavaScript">
+                            <img src="assets/javascript.svg" alt="JavaScript" loading="lazy">
                             <div class="skill-info">
                                 <h4>JavaScript</h4>
                                 <p>Modern JavaScript for interactive web applications and frontend development</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/html5.svg" alt="HTML5">
+                            <img src="assets/html5.svg" alt="HTML5" loading="lazy">
                             <div class="skill-info">
                                 <h4>HTML5</h4>
                                 <p>Semantic markup and modern HTML5 features for web development</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/css.svg" alt="CSS3">
+                            <img src="assets/css.svg" alt="CSS3" loading="lazy">
                             <div class="skill-info">
                                 <h4>CSS3</h4>
                                 <p>Responsive design, animations, and modern CSS features</p>
@@ -299,14 +378,14 @@
                     </div>
                     <div class="skill-items" id="ai-skills">
                         <div class="skill-item">
-                            <img src="assets/tensorflow.svg" alt="TensorFlow">
+                            <img src="assets/tensorflow.svg" alt="TensorFlow" loading="lazy">
                             <div class="skill-info">
                                 <h4>TensorFlow</h4>
                                 <p>Deep learning models, neural networks, and AI application development</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/pytorch.svg" alt="PyTorch">
+                            <img src="assets/pytorch.svg" alt="PyTorch" loading="lazy">
                             <div class="skill-info">
                                 <h4>PyTorch</h4>
                                 <p>Currently learning PyTorch for research and advanced deep learning projects</p>
@@ -322,21 +401,21 @@
                     </div>
                     <div class="skill-items" id="web-skills">
                         <div class="skill-item">
-                            <img src="assets/flask.svg" alt="Flask">
+                            <img src="assets/flask.svg" alt="Flask" loading="lazy">
                             <div class="skill-info">
                                 <h4>Flask</h4>
                                 <p>Lightweight web framework for building scalable backend applications</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/django.svg" alt="Django">
+                            <img src="assets/django.svg" alt="Django" loading="lazy">
                             <div class="skill-info">
                                 <h4>Django</h4>
                                 <p>Full-featured web framework for robust web applications and APIs</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/vite-react.svg" alt="React">
+                            <img src="assets/vite-react.svg" alt="React" loading="lazy">
                             <div class="skill-info">
                                 <h4>Vite React</h4>
                                 <p>Modern React development with Vite for fast and efficient frontend builds</p>
@@ -352,21 +431,21 @@
                     </div>
                     <div class="skill-items" id="tools-skills">
                         <div class="skill-item">
-                            <img src="assets/mysql.svg" alt="MySQL">
+                            <img src="assets/mysql.svg" alt="MySQL" loading="lazy">
                             <div class="skill-info">
                                 <h4>MySQL</h4>
                                 <p>Relational database management, optimization, and complex query design</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/vscode.svg" alt="VS Code">
+                            <img src="assets/vscode.svg" alt="VS Code" loading="lazy">
                             <div class="skill-info">
                                 <h4>VS Code</h4>
                                 <p>Primary development environment with extensive customization and extensions</p>
                             </div>
                         </div>
                         <div class="skill-item">
-                            <img src="assets/git.svg" alt="Git">
+                            <img src="assets/git.svg" alt="Git" loading="lazy">
                             <div class="skill-info">
                                 <h4>Git</h4>
                                 <p>Version control, branching strategies, and collaborative development workflows</p>
@@ -668,7 +747,7 @@
             <div class="articles-container">
                 <a class="article-card" href="https://medium.com/@abdurrafay432007/my-journey-into-ethical-web-scraping-with-python-️-4b5f8b48de10" style="text-decoration: none; color: inherit;" target="_blank" rel="noopener">
                     <div class="article-image">
-                        <img src="assets/web_scraping.png" alt="Web Scraping Ethics">
+                        <img src="assets/web_scraping.png" alt="Web Scraping Ethics" loading="lazy">
                     </div>
                     <div class="article-content">
                         <div class="article-category">Web Scraping</div>
@@ -676,6 +755,86 @@
                         <p>Best practices for responsible web scraping, including respecting robots.txt, rate limiting, and legal considerations when extracting data from websites.</p>
                     </div>
                 </a>
+            </div>
+        </section>
+
+        <section id="certificates" class="animated-section">
+            <div class="section-header">
+                <h2>Certifications & Achievements</h2>
+                <p class="section-subtitle">Professional certifications and course completions</p>
+            </div>
+            <div class="certificates-container">
+                <!-- Certificate Card Template - Replace with your actual certificates -->
+                <div class="certificate-card">
+                    <a href="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0YJ2CQKBA37C/CERTIFICATE_LANDING_PAGE~0YJ2CQKBA37C.jpeg" target="_blank" rel="noopener" class="certificate-image-link">
+                        <div class="certificate-image">
+                            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~0YJ2CQKBA37C/CERTIFICATE_LANDING_PAGE~0YJ2CQKBA37C.jpeg" alt="Certificate Name" loading="lazy">
+                            <div class="certificate-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>View Certificate</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="certificate-content">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="certificate-issuer">
+                                <span class="issuer-name">IBM</span>
+                                <span class="issue-date">Aug 20, 2025</span>
+                            </div>
+                        </div>
+                        <h3>IBM AI Developer</h3>
+                        <p>This comprehensive professional certificate program covers the complete journey of AI-powered software development. It includes foundational knowledge in software engineering, artificial intelligence, and generative AI, progressing through practical application development using Python, Flask, HTML, CSS, and JavaScript.</p>
+                        <div class="certificate-footer">
+                            <a href="https://www.coursera.org/account/accomplishments/professional-cert/0YJ2CQKBA37C" target="_blank" rel="noopener" class="verify-btn">
+                                <i class="fas fa-check-circle"></i>
+                                Verify Certificate
+                            </a>
+                            <div class="certificate-tags">
+                                <span class="tag">Generative AI Development</span>
+                                <span class="tag">Full-Stack Web Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more certificate cards as needed -->
+                <div class="certificate-card">
+                    <a href="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~3A1AWFG3ZHZ0/CERTIFICATE_LANDING_PAGE~3A1AWFG3ZHZ0.jpeg" target="_blank" rel="noopener" class="certificate-image-link">
+                        <div class="certificate-image">
+                            <img src="https://s3.amazonaws.com/coursera_assets/meta_images/generated/CERTIFICATE_LANDING_PAGE/CERTIFICATE_LANDING_PAGE~3A1AWFG3ZHZ0/CERTIFICATE_LANDING_PAGE~3A1AWFG3ZHZ0.jpeg" alt="Certificate Name 2" loading="lazy">
+                            <div class="certificate-overlay">
+                                <i class="fas fa-search-plus"></i>
+                                <span>View Certificate</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="certificate-content">
+                        <div class="certificate-header">
+                            <div class="certificate-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="certificate-issuer">
+                                <span class="issuer-name">NVIDIA</span>
+                                <span class="issue-date">Jul 15, 2025</span>
+                            </div>
+                        </div>
+                        <h3>AI Infrastructure and Operations Fundamentals</h3>
+                        <p>This NVIDIA course provides foundational knowledge in AI infrastructure and operations management. It covers the essential concepts, tools, and best practices for deploying, managing, and operating AI systems at scale, focusing on the technical infrastructure required to support AI workloads effectively.</p>
+                        <div class="certificate-footer">
+                            <a href="https://www.coursera.org/account/accomplishments/verify/3A1AWFG3ZHZ0" target="_blank" rel="noopener" class="verify-btn">
+                                <i class="fas fa-check-circle"></i>
+                                Verify Certificate
+                            </a>
+                            <div class="certificate-tags">
+                                <span class="tag">AI Infrastructure Management</span>
+                                <span class="tag">AI Operations & Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -731,8 +890,8 @@
                                 <i class="fab fa-github"></i>
                             </a>
                             <a href="https://www.upwork.com/freelancers/~01e0e53ea3fc415198" target="_blank" aria-label="Upwork">
-                                <img src="assets/upwork-light.png" class="upwork-icon light" alt="Upwork">
-                                <img src="assets/upwork-dark.png" class="upwork-icon dark" alt="Upwork">
+                                <img src="assets/upwork-light.png" class="upwork-icon light" alt="Upwork" loading="lazy">
+                                <img src="assets/upwork-dark.png" class="upwork-icon dark" alt="Upwork" loading="lazy">
                             </a>
                         </div>
                     </div>
@@ -775,8 +934,8 @@
                         <i class="fab fa-github"></i>
                     </a>
                     <a href="https://www.upwork.com/freelancers/~01e0e53ea3fc415198" target="_blank" aria-label="Upwork">
-                        <img src="assets/upwork-light.png" class="upwork-icon light" alt="Upwork">
-                        <img src="assets/upwork-dark.png" class="upwork-icon dark" alt="Upwork">
+                        <img src="assets/upwork-light.png" class="upwork-icon light" alt="Upwork" loading="lazy">
+                        <img src="assets/upwork-dark.png" class="upwork-icon dark" alt="Upwork" loading="lazy">
                     </a>
                 </div>
             </div>
@@ -786,6 +945,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

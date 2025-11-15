@@ -1,3 +1,39 @@
+// Loading Screen
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    
+    // Minimum display time for loading screen (in ms)
+    const minLoadTime = 1000;
+    const startTime = performance.now();
+    
+    const hideLoadingScreen = () => {
+        const elapsedTime = performance.now() - startTime;
+        const remainingTime = Math.max(0, minLoadTime - elapsedTime);
+        
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            document.body.style.overflow = 'visible';
+            
+            // Remove from DOM after animation completes
+            setTimeout(() => {
+                if (loadingScreen && loadingScreen.parentNode) {
+                    loadingScreen.remove();
+                }
+            }, 500);
+        }, remainingTime);
+    };
+    
+    // Ensure all critical resources are loaded
+    if (document.readyState === 'complete') {
+        hideLoadingScreen();
+    } else {
+        window.addEventListener('load', hideLoadingScreen);
+    }
+});
+
+// Prevent body scroll while loading
+document.body.style.overflow = 'hidden';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile detection
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
@@ -289,4 +325,135 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('SW registration failed: ', registrationError);
             });
     }
+
+    // Certificate cards animation on scroll
+    const certificateCards = document.querySelectorAll('.certificate-card');
+    if (certificateCards.length > 0) {
+        const certificateObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                    certificateObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        certificateCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            certificateObserver.observe(card);
+        });
+    }
+
+    // Enhanced lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+        // Browser supports native lazy loading
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        lazyImages.forEach(img => {
+            if (img.dataset.src) {
+                img.src = img.dataset.src;
+            }
+        });
+    } else {
+        // Fallback for browsers that don't support native lazy loading
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
+                    img.classList.add('loaded');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => imageObserver.observe(img));
+    }
+
+    // Optimize scroll performance with requestAnimationFrame
+    let scrollTimeout;
+    const optimizedScrollHandler = () => {
+        if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+        }
+        scrollTimeout = window.requestAnimationFrame(() => {
+            updateHeaderBackground();
+        });
+    };
+
+    // Performance monitoring
+    if ('PerformanceObserver' in window) {
+        try {
+            // Monitor Largest Contentful Paint (LCP)
+            const lcpObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                console.log('LCP:', lastEntry.renderTime || lastEntry.loadTime);
+            });
+            lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+            // Monitor First Input Delay (FID)
+            const fidObserver = new PerformanceObserver((list) => {
+                list.getEntries().forEach((entry) => {
+                    console.log('FID:', entry.processingStart - entry.startTime);
+                });
+            });
+            fidObserver.observe({ entryTypes: ['first-input'] });
+        } catch (e) {
+            // PerformanceObserver not fully supported
+            console.log('Performance monitoring not available');
+        }
+    }
+
+    // Prefetch next pages or resources on hover
+    const prefetchLinks = document.querySelectorAll('a[href^="#"]');
+    prefetchLinks.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                // Preload images in the section
+                const images = targetSection.querySelectorAll('img[loading="lazy"]');
+                images.forEach(img => {
+                    if (img.dataset.src && !img.src) {
+                        const preloadImg = new Image();
+                        preloadImg.src = img.dataset.src;
+                    }
+                });
+            }
+        });
+    });
+
+    // Add smooth reveal animation for sections
+    const animatedSections = document.querySelectorAll('.animated-section');
+    animatedSections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    const sectionRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, 100);
+                sectionRevealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    animatedSections.forEach(section => {
+        sectionRevealObserver.observe(section);
+    });
+
+    console.log('Portfolio loaded successfully! ✨');
 });
